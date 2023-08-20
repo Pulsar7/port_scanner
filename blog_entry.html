@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+    </head>
+    <style>
+    	.prettyprint {
+      		font-size: 0.9rem;
+      	}
+  	</style>
+    <body>
+        <h2>Einleitung</h2>
+        <p>
+            Damit nun tatsächlich auch das zuletzt erworbene Wissen über Java angewandt wird, habe ich mir überlegt ein einfaches Tool aus dem 
+            Pentesting-Bereich zu programmieren: ein <b>Port Scanner</b>. Das Programm soll zwar bei weitem nicht die Fähigkeiten von bereits 
+            ethablierten Tools wie <b><a href="">nmap</a></b> oder <b><a href="https://github.com/RustScan/RustScan">RustScan</a></b> besitzen, dennoch 
+            kann somit auch eine kleine Einführung in <b>sockets</b> erfolgen.
+        </p>
+        <h2 id="code">PortScanner.java</h2>
+        <p>
+            Innerhalb der <b>PortScanner.java</b>-Datei muss zu Beginn wieder geprüft werden, ob ein Argument bei der Programmausführung auch mitgeliefert wurde, 
+            da so der Benutzer die Ziel-Adresse angeben soll:
+        </p>
+        <pre class="prettyprint">
+if (args.length < 1) {
+    error("Too few arguments! You have to enter the host-IP!");
+    return;
+}
+String host_ip = args[0], service_name = "";
+int host_port = 0, open_ports = 0;
+Boolean status = ServiceGrabber.get_all_services();
+if (status == false) {
+    return;
+}</pre>
+    </body>
+</html>

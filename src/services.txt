@@ -1,0 +1,5 @@
+80:GET / HTTP/1.0\r\n\r\n
+443:GET / HTTP/1.0\r\n\r\n
+22:SSH-2.0-MyBannerGrabber\r\n
+21:USER anonymous\r\n
+25:EHLO example.com\r\n
